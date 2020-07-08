@@ -6,6 +6,16 @@
     <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
     <hr>
     <p>{{ serverCreationStatus }} {{ serverName }}</p>
+    <hr>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend username__prepend">
+          <span class="input-group-text username__prepend-span" id="basic-addon1">{{ username }}</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="username">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" [disabled]="username==''" (click)="clearUsername()">Submit</button>
+        </div>
+    </div>
     <app-server></app-server>
     <app-server></app-server>
 </div>
