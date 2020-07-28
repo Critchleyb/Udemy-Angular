@@ -1,12 +1,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
-            <img src="" alt="" class="image-responsive">
+            <img src="{{ selectedRecipe.imagePath }}" alt="Recipe Image" class="image-responsive" style="height:15rem">
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <h2>Recipe Name</h2>
+            <h2>
+                {{ selectedRecipe.name }}
+            </h2>
         </div>
     </div>
     <div class="row">
@@ -25,7 +27,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            Description
+            {{ selectedRecipe.description }}
         </div>
     </div>
     <div class="row">
