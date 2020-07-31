@@ -1,0 +1,28 @@
+import { Injectable } from '@angular/core';
+
+import { Recipe } from './recipe.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class RecipeService {
+
+  private recipes: Recipe[] = [
+    new Recipe('Test Recipe','This is a test','https://www.seekpng.com/png/full/1011-10115301_pizza-slices-clipart-pizza-stickers.png'),
+    new Recipe('Test Recipe2','This is a test2','https://www.seriouseats.com/recipes/images/2015/07/20150702-sous-vide-hamburger-anova-primary.jpg')
+  ];
+
+  constructor() { }
+
+  getRecipes() {
+    return this.recipes.slice();
+  }
+
+  addRecipe(recipeToAdd: Recipe) {
+
+  }
+
+  deleteRecipe(recipeToDelete: Recipe) {
+    
+  }
+}
