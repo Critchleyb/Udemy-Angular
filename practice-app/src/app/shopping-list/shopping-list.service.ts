@@ -7,6 +7,7 @@ export class ShoppingListService {
     new Ingredient('Apples',5),
     new Ingredient('Tomatoes', 5)
   ];
+  selectedIngredient = new Subject<number>();
 
   constructor() { }
 
@@ -14,13 +15,35 @@ export class ShoppingListService {
     return this.ingredients.slice();
   }
 
+  getIngredient(index: number) {
+    return this.ingredients[index];
+  }
+
+  updateIngredient(ingredient: Ingredient, index: number){
+    this.ingredients[index] = ingredient;
+    this.pushUpdates();
+  }
+
   addIngredient(newIngredient: Ingredient) {
     this.ingredients.push(newIngredient);
-    this.ingredientsChanged.next(this.ingredients.slice());
+    this.pushUpdates();
   }
 
   addIngredients(newIngredients: Ingredient[]) {
     this.ingredients.push(...newIngredients);
+    this.pushUpdates();
+  }
+
+  selectIngredient(index: number){
+    this.selectedIngredient.next(index);
+  }
+
+  deleteIngredient(index: number){
+    this.ingredients.splice(index, 1);
+    this.pushUpdates();
+  }
+
+  pushUpdates() {
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 }
