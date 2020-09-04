@@ -10,26 +10,7 @@ import { Subject } from 'rxjs';
 
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
-  private recipes: Recipe[] = [
-    new Recipe(
-      'Test Recipe',
-      'This is a test',
-      'https://www.seekpng.com/png/full/1011-10115301_pizza-slices-clipart-pizza-stickers.png',
-      [
-        new Ingredient('Cheese', 1),
-        new Ingredient('Tomatoe',1)
-      ]
-    ),
-    new Recipe(
-      'Test Recipe2',
-      'This is a test2',
-      'https://www.seriouseats.com/recipes/images/2015/07/20150702-sous-vide-hamburger-anova-primary.jpg',
-      [
-        new Ingredient('Meat',1),
-        new Ingredient('Salad',1)
-      ]
-    )
-  ];
+  private recipes: Recipe[] = [];
 
   constructor() { }
 
@@ -58,5 +39,10 @@ export class RecipeService {
 
   pushRecipeUpdates() {
     this.recipesChanged.next(this.recipes.slice());
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.pushRecipeUpdates();
   }
 }
