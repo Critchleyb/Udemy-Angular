@@ -1,0 +1,29 @@
+.background {
+    position: fixed;
+    flex: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 50;
+}
+
+.alert-box {
+    position: absolute;
+    display: flex;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 20vw;
+    background-color: #eee;
+    z-index: 100;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.75);
+
+    span {
+        white-space: nowrap;
+    }
+}

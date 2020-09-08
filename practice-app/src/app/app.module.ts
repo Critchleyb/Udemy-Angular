@@ -17,7 +17,8 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { AuthComponent } from './auth/auth.component';
-import { AuthInterceptorService } from './auth/auth-interceptor.service'
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { AlertBoxComponent } from './shared/alert-box/alert-box.component'
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service'
     RecipeStartComponent,
     RecipeEditComponent,
     AuthComponent,
+    AlertBoxComponent,
   ],
   imports: [
     BrowserModule,
