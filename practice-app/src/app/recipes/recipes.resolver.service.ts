@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router'
 import { Recipe } from './recipe.model'
-import { DataStorageService } from '../shared/data-storage.service'
-import { RecipeService } from './recipe.service';
+// import { DataStorageService } from '../shared/data-storage.service'
+// import { RecipeService } from './recipe.service';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../store/app.reducer';
 import * as RecipeActions from './store/recipe.actions';
