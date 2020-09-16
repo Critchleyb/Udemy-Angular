@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "ng-complete-guide-55348"
+  },
+  "targets": {
+    "ng-complete-guide-55348": {
+      "hosting": {
+        "practice-app": [
+          "ng-complete-guide-55348"
+        ]
+      }
+    }
   }
 }
